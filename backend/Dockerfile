@@ -7,7 +7,7 @@ COPY . .
 
 RUN npm run build
 
-FROM node:16.20-alpine AS deploy
+FROM node:18.20-alpine AS deploy
 WORKDIR /app
 RUN npm install -g pm2
 COPY --from=builder /app/package.json /app/package-lock.json ./

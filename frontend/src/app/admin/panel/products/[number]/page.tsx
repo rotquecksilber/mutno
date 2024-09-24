@@ -5,7 +5,7 @@ import UpdateProduct from '@/components/AdminUpdateProduct/AdminUpdateProduct';
 
 
 export async function generateStaticParams() {
-  const res = await axios.get<Product[]>('http://host.docker.internal:4000/api/product');
+  const res = await axios.get<Product[]>('http://172.18.0.1:4000/api/product');
   const products = res.data;
 
   return products.map((product) => ({

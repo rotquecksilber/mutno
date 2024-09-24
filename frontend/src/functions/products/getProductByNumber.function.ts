@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const fetchProductByNumber = async (number: string): Promise<Product | null> => {
   try {
-    const response = await axios.get<Product>(`http://host.docker.internal:4000/api/product/${number}`, {
+    const response = await axios.get<Product>(`http://172.18.0.1:4000/api/product${number}`, {
       headers: {
         'Cache-Control': 'no-store',
         'Pragma': 'no-cache',
